@@ -10,11 +10,14 @@
 
 int exo1(void) ;
 int exo2(void) ;
+int exo3(void);
 
 int main(void)
 {
 	exo1();
 	exo2();
+	exo3();
+	
 	return 0;
 }
 
@@ -48,7 +51,7 @@ int exo2(void)
 	
 	// Initialization du tableau
 	for(i=0;i<10;i=i+1)
-		sat[i]= rand() - 16383;
+		sat[i]= rand() - 16383; //Fonction rand() aléatoire comprise entre -16383 et 16383
 
 	for(i=0;i<10;i=i+1)
 	{
@@ -61,5 +64,22 @@ int exo2(void)
 			sat[i]=0;
 		}
 	}
+	return 0;
+}
+
+
+
+
+
+
+int exo3(void)
+{
+	int a[10] = {1,10,12,15,18,22,27,32,35,43}; int dist[10];
+	int i=0;
+	
+	// Initialization du tableau
+	for(i=0;i<9;i=i+1)
+		dist[i+1] = a[i+1] - a[i];
+	
 	return 0;
 }
