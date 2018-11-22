@@ -11,12 +11,14 @@
 int exo1(void) ;
 int exo2(void) ;
 int exo3(void);
+int exo4(void);
 
 int main(void)
 {
 	exo1();
 	exo2();
 	exo3();
+	exo4();
 	
 	return 0;
 }
@@ -80,6 +82,24 @@ int exo3(void)
 	// Initialization du tableau
 	for(i=0;i<9;i=i+1)
 		dist[i+1] = a[i+1] - a[i];
+	
+	return 0;
+}
+
+
+
+
+
+
+int exo4(void)
+{
+	int a[5] = {1,5,9,8,11}; 
+	int b[5];
+	int i=0;
+	
+	// Initialization du tableau
+	for(i=0;i<5;i=i+1)
+		b[i]=a[4-i];
 	
 	return 0;
 }
