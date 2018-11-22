@@ -12,6 +12,7 @@ int exo1(void) ;
 int exo2(void) ;
 int exo3(void);
 int exo4(void);
+int exo5(void);
 
 int main(void)
 {
@@ -19,7 +20,7 @@ int main(void)
 	exo2();
 	exo3();
 	exo4();
-	
+	exo5();
 	return 0;
 }
 
@@ -100,6 +101,20 @@ int exo4(void)
 	// Initialization du tableau
 	for(i=0;i<5;i=i+1)
 		b[i]=a[4-i];
+	
+	return 0;
+}
+
+
+
+int exo5(void)
+{
+	int a[10] = {1,5,9,8,11,0,0,0,0,0};
+	int i=0;
+	
+	// Initialization du tableau
+	for(i=0;i<5;i=i+1)
+		a[i+5]=a[4-i];
 	
 	return 0;
 }
