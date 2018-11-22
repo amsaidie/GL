@@ -11,7 +11,7 @@ unsigned char bin[10] =
 int i;
 int SEUIL = 5;
 			
-			for(i=0;i<5;i=i++)
+			for(i=0;i<4;i=i++)
 {
 	if(bin>SEUIL) 
 	{
