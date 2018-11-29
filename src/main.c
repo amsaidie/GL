@@ -6,14 +6,18 @@
 
 int main(void)
 {
-	unsigned char joueur[6] = {3, 4, 33, 12, 42, 9};
+	unsigned char joueur[6] = {1, 5, 2, 45, 38, 25};
 	unsigned char gagnant[6] = {0, 0, 0, 0, 0, 0};
-	int i=0, j=0;
+	int i=0, j=0, a=0;
 	int bons_num=0;
+	int best_score=0;
 	
 ///////////////////////////////////////////////////////////////////////
 	
 	initialiserTirage();
+	
+	for(a=0;a<100;a++)
+	{
 	
 	for(i=0; i<6; i++)
 	{
@@ -26,12 +30,16 @@ int main(void)
 	{
 		for(j=0; j<6; j++)
 		{
-			if(joueur[i]==gagnant[j])
+			if(joueur[j]==gagnant[i])
 
 				bons_num=bons_num+1;
 			}
 	}
+	if(best_score<bons_num)
+		
+		best_score=bons_num;
 	
     return 0;
+	}
 }
 
