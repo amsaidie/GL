@@ -6,7 +6,7 @@
 
 int main(void)
 {
-	unsigned char joueur[6] = {12, 27, 1, 45, 33, 9};
+	unsigned char joueur[6] = {12, 23, 1, 45, 37, 9};
 	unsigned char gagnant[6] = {0, 0, 0, 0, 0, 0};
 	int i=0, j=0, a=0;
 	int bons_num=0;
