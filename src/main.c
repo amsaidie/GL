@@ -1,5 +1,6 @@
 //  Copyright (c) 2018 Antoine Tran Tan
 
+#include <userint.h>
 #include <ansi_c.h>
 #include "my_header.h"
 #include "TP_lib_suite.h"
@@ -14,10 +15,14 @@ int main(void)
 					   
 ///////////////////////////////////////////////////////////////////////
 	
-	sscanf(phrase, "%*s %*s %s %s %*s %*s %*s %*s %*s %lu", nom, prenom, &annee);
+	scanf("%s", nom);
+	scanf("%s", prenom); 
+	scanf("%lu", &annee); 
 	
-	sprintf("Je m'appelle Msaidie Aman et je suis ne en 2000", phrase);
+	sprintf(phrase,"Je m'appelle %s %s et je suis née en l'année %lu", nom, prenom, annee);
 	
+	MessagePopup("Voici la chaine", phrase);
+																
 	return 0;
 
 }
