@@ -8,10 +8,9 @@
 
 int main(void)
 {
-	char phrase[100];
-	char prenom[100];
-	char nom[100];
-	unsigned long int annee;
+	char ligne1[80];
+	char ligne2[80];
+	char ligne3[80];
 					   
 ///////////////////////////////////////////////////////////////////////
 	
@@ -19,7 +18,7 @@ int main(void)
 	scanf("%s", prenom); 
 	scanf("%lu", &annee); 
 	
-	sprintf(phrase,"Je m'appelle %s %s et je suis née en l'année %lu", nom, prenom, annee);
+	sprintf("",)
 	
 	MessagePopup("Voici la chaine", phrase);
 																
