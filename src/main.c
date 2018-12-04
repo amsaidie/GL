@@ -1,46 +1,23 @@
 //  Copyright (c) 2018 Antoine Tran Tan
 
+#include <ansi_c.h>
 #include "my_header.h"
 #include "TP_lib_suite.h"
 
 
 int main(void)
 {
-	unsigned char joueur[6] = {12, 23, 1, 45, 37, 9};
-	unsigned char gagnant[6] = {0, 0, 0, 0, 0, 0};
-	int i=0, j=0, a=0;
-	int bons_num=0;
-	int best_score=0;
-	
+	char phrase[100];
+	char prenom[100];
+	char nom[100];
+	unsigned long int annee;
+					   
 ///////////////////////////////////////////////////////////////////////
 	
-	initialiserTirage();
+	sscanf(phrase, "%*s %*s %s %s %*s %*s %*s %*s %*s %lu", nom, prenom, &annee);
 	
-	for(a=0;a<100;a++)
-	{
-		bons_num=0;
-		initialiserTirage();
+	sprintf("Je m'appelle Msaidie Aman et je suis ne en 2000", phrase);
 	
-	for(i=0; i<6; i++)
-	{
-		gagnant[i]=tirerNumero();
-	}
-
-
-	
-	for(i=0; i<6; i++)
-	{
-		for(j=0; j<6; j++)
-		{
-			if(joueur[j]==gagnant[i])
-
-				bons_num=bons_num+1;
-			}
-	}
-	if(best_score<bons_num)
-		
-		best_score=bons_num;
-	}
 	return 0;
-}
 
+}
