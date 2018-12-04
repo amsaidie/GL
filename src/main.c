@@ -13,13 +13,15 @@ int main(void)
 	char nom[100];
 	unsigned long int annee;
 					   
-///////////////////////////////////////////////////////////////////////
-	
+/////////////////////////////////////////////////////////////////////////
+	printf("Nom : ");
 	scanf("%s", nom);
-	scanf("%s", prenom); 
+	printf("prenom : ");
+	scanf("%s", prenom);
+	printf("Annee de naissance : ");
 	scanf("%lu", &annee); 
 	
-	sprintf(phrase,"Je m'appelle %s %s et je suis née en l'année %lu", nom, prenom, annee);
+	sprintf(phrase,"Je suis %s %s et je suis née en l'année %lu", nom, prenom, annee);
 	
 	MessagePopup("Voici la chaine", phrase);
 																
