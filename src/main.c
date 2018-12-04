@@ -25,7 +25,7 @@ int main(void)
 	sprintf(ligne2, "avec %u sommets", nb_sommets);
 	
 	MessagePopup("Voici le type de ploygone", ligne1);
-	MessagePopup("Voici le type de ploygone", ligne2);
+	MessagePopup("Voici le nombre de sommet", ligne2);
 																
 	return 0;
 
