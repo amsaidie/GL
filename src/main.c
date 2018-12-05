@@ -16,14 +16,14 @@ int main(void)
 	unsigned int nb_sommets;
 	char coordonneesx[5]={0,0,0,0,0};
 	char coordonneesy[5]={0,0,0,0,0};
-	int i;
+	int i, j;
 					   
 ///////////////////////////////////////////////////////////////////////
 	
 	sscanf(ligne1, "%*s %s", Nom);
 	sscanf(ligne2, "%*s %u", &nb_sommets);
-	sscanf(ligne3, "%*s %u %u %u %u %u", &coordonneesx[0], &coordonneesx[1], &coordonneesx[2], &coordonneesx[3], &coordonneesx[4]);
-	sscanf(ligne3, "%*s %u %u %u %u %u", &coordonneesy[0], &coordonneesy[1], &coordonneesy[2], &coordonneesy[3], &coordonneesy[4]);
+	sscanf(ligne3, "%*s %u %*u %u %*u %u %*u% %u %*u %u %*u", &coordonneesx[0], &coordonneesx[1], &coordonneesx[2], &coordonneesx[3], &coordonneesx[4]);
+	sscanf(ligne3, "%*s %*u %u %*u %u %*u% %u %*u %u %*u %u", &coordonneesy[0], &coordonneesy[1], &coordonneesy[2], &coordonneesy[3], &coordonneesy[4]);
 	
 	for(i=0;i<5;i=i+1) //5 fois pour les 5 coordonnées du pentagone
 {
