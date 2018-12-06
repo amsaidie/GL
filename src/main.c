@@ -10,7 +10,7 @@ int main(void)
 {
 	char ligne1[80]="Nom: Pentagone";  //sprintf(ligne1, "Nom: Pentagone")
 	char ligne2[80]="nb_sommets: 5";
-	char ligne3[80]="coordonnees: 10 20 30 20 30 40 -1 53 35 65";
+	char ligne3[80]="coordonnees: 10 20 30 20 30 40 43 53 35 65";
 	char Nom[80];
 	char Message[80];
 	unsigned int nb_sommets;
