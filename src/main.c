@@ -14,39 +14,38 @@ int main(void)
 	char Nom[80];
 	char Message[80];
 	unsigned int nb_sommets;
-	long int coordonneesx[5]={0,0,0,0,0};
-	long int coordonneesy[5]={0,0,0,0,0};
-	int i, j;
+	int coordonneesx[5];
+	int coordonneesy[5];
+	int i, detection_erreur=0;
 					   
 ///////////////////////////////////////////////////////////////////////
 	
 	sscanf(ligne1, "%*s %s", Nom);
 	sscanf(ligne2, "%*s %u", &nb_sommets);
-	sscanf(ligne3, "%*s %lu %*lu %lu %*lu %lu %*lu% %lu %*lu %lu %*lu", &coordonneesx[0], &coordonneesx[1], &coordonneesx[2], &coordonneesx[3], &coordonneesx[4]);
-	sscanf(ligne3, "%*s %*lu %lu %*lu %lu %*lu% %lu %*lu %lu %*lu %lu", &coordonneesy[0], &coordonneesy[1], &coordonneesy[2], &coordonneesy[3], &coordonneesy[4]);
+	sscanf(ligne3, "%*s %d %*d %d %*d %d %*d %d %*d %d %*d", &coordonneesx[0], &coordonneesx[1], &coordonneesx[2], &coordonneesx[3], &coordonneesx[4]);
+	sscanf(ligne3, "%*s %*d %d %*d %d %*d %d %*d %d %*d %d", &coordonneesy[0], &coordonneesy[1], &coordonneesy[2], &coordonneesy[3], &coordonneesy[4]);
 	
-	for(i=0;i<5;i=i+1) //5 fois pour les 5 coordonnées du pentagone
+	for(i=0;i<nb_sommets;i=i+1) //5 fois pour les 5 coordonnées du pentagone
 {
-	if(coordonneesx[i] !=-1) //Pour vérifier s'il a bien les coordonnée du pentagone et non du triangle. Si coordonneex ou y sont différent de -1
+	
+	if(coordonneesx[i] == -1) //Détection d'erreur pour les coordonnées de x
 	{
-		i=i+1;
+		detection_erreur++;
 	}
-	if(coordonneesy[i] !=-1)
+	if(coordonneesy[i] == -1)
 	{
-		i=i+1; //i=2 à la fin de la première boucle for. Donc si on le répète 5 fois, On arrive à 10 coordonnées (5 pour x et 5 pour y)
+		detection_erreur++; // Détection d'erreur pour les coordonnées de y
 	}
-} //Vérification du pentagone terminé
-if(coordonneesx[i]&&coordonneesy[i]==5)
-{
-	sprintf(Message, "C'est un %s avec %u sommets",Nom, nb_sommets);
-		MessagePopup("Caracteristiques", Message);
 }
-		
+if(detection_erreur>=1)
+	
+	MessagePopup("Erreur !!!", "Erreur dans la saisie des coordonnées. Veuillez saisir d'autres valeurs");
+
 		else
 		{
-			MessagePopup("Erreur", "Erreur dans la saisie des coordonnees");
+			sprintf(Message, "C'est un %s comportant %u sommets", Nom, nb_sommets); 
+			MessagePopup("Type de polygone", Message);
 		}
-			
 																
 	return 0;
 
